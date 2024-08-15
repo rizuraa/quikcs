@@ -5,20 +5,26 @@ import Image from "next/image";
 import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import { Separator } from "../ui/separator";
-import { SearchIcon, XIcon } from "lucide-react";
+import { SearchIcon, XIcon, ChevronLeftIcon } from "lucide-react";
 import ChatList from "./ChatContent/ChatList";
 import Message from "./ChatContent/Message";
-import { ChevronLeftIcon } from "lucide-react";
 
 export default function ChatContent() {
   const [activeComponent, setActiveComponent] = useState("ChatList");
   const [popoverOpen, setPopoverOpen] = useState(false);
+  const [selectedConversationId, setSelectedConversationId] = useState<
+    number | null
+  >(null);
+  const [selectedConversationTitle, setSelectedConversationTitle] =
+    useState<string>("");
 
   const handleBack = () => {
     setActiveComponent("ChatList");
   };
 
-  const handleSelect = () => {
+  const handleSelect = (conversationId: number, title: string) => {
+    setSelectedConversationId(conversationId);
+    setSelectedConversationTitle(title);
     setActiveComponent("message");
   };
 
@@ -30,8 +36,8 @@ export default function ChatContent() {
   };
 
   const renderComponent = () => {
-    if (activeComponent === "message") {
-      return <Message />;
+    if (activeComponent === "message" && selectedConversationId !== null) {
+      return <Message conversationId={selectedConversationId} />;
     }
     return <ChatList onSelect={handleSelect} />;
   };
@@ -64,7 +70,7 @@ export default function ChatContent() {
       </PopoverTrigger>
       <PopoverContent
         className="p-4 mr-7 bg-white shadow-lg rounded-lg relative"
-        style={{ width: "600px", height: "400px" }}
+        style={{ width: "700px", height: "400px" }}
       >
         <div className="flex flex-col h-full">
           {activeComponent === "message" && (
@@ -77,7 +83,10 @@ export default function ChatContent() {
               >
                 <ChevronLeftIcon className="h-4 w-4" />
               </Button>
-              <div className="ml-2 font-semibold">Message Title</div>
+              {/* chat title */}
+              <div className="ml-2 font-semibold text-primary-blue">
+                {selectedConversationTitle}
+              </div>
               <Button
                 variant="outline"
                 size="icon"

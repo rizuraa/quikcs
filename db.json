@@ -1,25 +1,49 @@
 {
-    "task": [
+    "users": [
+        {"id": 1, "name": "you"},
+        {"id": 2, "name": "FastVisa Support"},
+        {"id": 3, "name": "Marry Hilda"},
+        {"id": 4, "name": "Ellen"},
+        {"id": 5, "name": "Cameron Philips"},
+        {"id": 6, "name": "Obaidullah Amarkhil"}
+    ],
+
+    "conversations": [
         {
-            "id": 1, 
-            "title": "Cross-reference with Jeanne for Case #192813", 
-            "date": "12/06/2021",
-            "tbd": "2 Days left",
-            "description": null
+            "id": 1,
+            "users": [1,3,6],
+            "title": "I-589-Amarkhil, Obaidullah[Affirmative Filing with ZHN]",
+            "messages": [
+                {"id": 1, "senderId": 3, "text": "Just Fill me in for his update yea?", "date": "2021-06-08"},
+                {"id": 2, "senderId": 1, "text": "No Worries. it will be completed ASAP. i've asked him yesterday.", "date": "2021-06-08"},
+                {"id": 3, "senderId": 3, "text": "Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks.", "date": "2021-06-09"},
+                {"id": 4, "senderId": 1, "text": "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.", "date": "2021-06-09"},
+                {"id": 5, "senderId": 3, "text": "Sure thing, Claren.", "date": "2021-06-09"}
+            ]
         },
         {
-            "id": 2, 
-            "title": "Contact Andrew for Online Meeting and Conference", 
-            "date": "3/06/2021",
-            "tbd": null,
-            "description": null
+            "id": 2,
+            "users": [1,5],
+            "title": "109220-Naturalization",
+            "messages": [
+                {"id": 1, "senderId": 5, "text": "please check this out!", "date": "2021-06-08"}
+            ]
         },
         {
-            "id": 3, 
-            "title": "Check and Revise Homework from Andre Gonzalez", 
-            "date": "11/06/2021",
-            "tbd": null,
-            "description": "Homeworks needed to be checked are as follows: Client Profle Questionere, Passport Requirements and Image, Personal Documents."
+            "id": 3,
+            "users": [1,4],
+            "title": "Jeannette Moraima Guaman Chamba(Hutto I-589)[Hutto Follow Up - Brief Service]",
+            "messages": [
+                {"id": 1, "senderId": 4, "text": "Hey Please Read!", "date": "2021-06-02"}
+            ]
+        },
+        {
+            "id": 4,
+            "users": [1,2],
+            "title": "FastVisa Support",
+            "messages": [
+                {"id": 1, "senderId": 2, "text": "Hey there, Welcome to your inbox!", "date": "2021-06-01"}
+            ]
         }
     ]
 }

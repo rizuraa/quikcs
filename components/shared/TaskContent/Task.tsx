@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import NewTask from "./NewTask";
+import { Loader2 } from "lucide-react";
 
 interface Task {
   id: number;
@@ -51,8 +52,12 @@ export default function Task() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-full">
-        <span className="ml-2">Loading Task List</span>
+      <div
+        className="flex flex-col justify-center items-center h-full"
+        style={{ marginTop: "150px" }}
+      >
+        <Loader2 className="animate-spin" />
+        <span className="ml-2 mt-2">Loading Task List</span>
       </div>
     );
   }
